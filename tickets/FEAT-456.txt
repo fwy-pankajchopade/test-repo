@@ -1,0 +1,30 @@
+## Ticket: FEAT-456
+## Status: Open
+## Priority: Medium
+## Reporter: dev@example.com
+## Date: 2026-03-15
+
+## Summary
+Add discount code support to the checkout flow.
+Discount codes must be validated before applying to the order total.
+
+## Service
+`payment-service`
+
+## Acceptance Criteria
+1. `POST /api/checkout/apply-discount` endpoint accepts `{ "code": "SAVE10" }`
+2. Validate code exists and is not expired
+3. Apply percentage or fixed discount to the order total
+4. Return updated order summary with discount applied
+5. Log usage of discount code
+
+## Constraints
+- Do NOT modify `OrderService.java`
+- Maintain backward compatibility with existing checkout API
+- Follow Repository → Service → Controller pattern
+- New DTO required for discount request/response
+
+## Definition of Done
+- New endpoint working in `payment-service`
+- Unit tests for discount calculation
+- Integration test for happy path and invalid code
