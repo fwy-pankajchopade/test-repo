@@ -1,0 +1,35 @@
+## Summary
+Payment confirmation emails are not sent when order total exceeds $1000.
+
+## Service
+payment-service
+
+## Affected File
+PaymentService.java
+
+## Steps To Reproduce
+1. Create an order with a total greater than $1000
+2. Complete the payment flow
+3. Check inbox — no confirmation email received
+
+## Expected Behavior
+Confirmation email is sent regardless of order total.
+
+## Actual Behavior
+Email is silently skipped for orders with total > $1000.
+
+## Suspected Root Cause
+PaymentService.java → processPayment() method
+EmailNotificationService.java → sendConfirmation()
+
+## Constraints
+- Do NOT modify OrderService.java
+- Do NOT change API contracts
+- Backward compatible fix only
+- Follow existing architecture patterns
+
+## Definition of Done
+- Fix applied in payment-service only
+- Existing tests pass
+- Edge case: order total exactly $1000 must also trigger email
+- No regression in orders under $1000

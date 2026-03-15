@@ -1,0 +1,11 @@
+# Auto-generated context files (created by scripts at runtime)
+context/*-full-context.md
+
+# Auto-generated review outputs (created by run-review.sh)
+outputs/*-review-context.md
+outputs/*-fix.md
+outputs/*-tests.md
+
+# Keep the tracked files in these directories
+!context/lessons-learned.md
+!outputs/README.md
