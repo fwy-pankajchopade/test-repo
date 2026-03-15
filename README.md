@@ -5,6 +5,30 @@
 
 ---
 
+## ⚠️ Windows Users (PowerShell)
+
+```powershell
+git clone https://github.com/fwy-pankajchopade/test-repo.git
+cd test-repo
+.\setup.ps1
+. $PROFILE
+```
+
+Then forever:
+```powershell
+bugfix BUG-123 PaymentService.java
+```
+
+## macOS / Linux Users
+
+```bash
+git clone https://github.com/fwy-pankajchopade/test-repo.git
+cd test-repo
+bash setup.sh && source ~/.zshrc
+```
+
+---
+
 ## Setup (One Time)
 
 ```bash

@@ -1,0 +1,5 @@
+# Force LF line endings for all shell scripts
+* text=auto
+*.sh text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
